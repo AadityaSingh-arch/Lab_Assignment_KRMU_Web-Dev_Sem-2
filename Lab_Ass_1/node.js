@@ -68,3 +68,4 @@ removeAllBtn.addEventListener('click', () => {
     events = []; // clear the events array
     renderEvents(); // re-render the event list
 });
+

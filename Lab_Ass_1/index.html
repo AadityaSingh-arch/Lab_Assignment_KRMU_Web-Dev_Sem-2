@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment 1</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f4f4f4;
+        }
+        h1 {
+            color: #333;
+        }
+        h2 {
+            color: #555;
+        }
+        .container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+        form label {
+            display: block;
+            margin-top: 10px;
+        }
+        form input{
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        form select{
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        form textarea {
+         width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        form button {
+            margin-top: 15px;
+            padding: 10px 15px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        form button:hover {
+            background-color: #218838;
+        }
+        .event-list button {
+            margin-right: 10px;
+            padding: 8px 12px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .event-list button:hover {
+            background-color: #0069d9;
+        }
+        #all-events-container {
+            margin-top: 20px;
+            color: #666;
+        }
+        #events-ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        #events-ul li {
+            background-color: #fff;
+            margin-bottom: 10px;
+            padding: 15px;
+            border-radius: 5px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+    <h1>Smart Event Dashboard</h1>
+    <div class = "container" id = "event-dashboard">
+        <h2>Add New Event</h2>
+        <form id="event-form">
+            <label for="event-name">Event Name:</label>
+            <input type="text" id="event-name" placeholder="Event Name" required>
+            <label for="event-date">Event Date:</label>
+            <input type="date" id="event-date" required>
+            <label for="event-time">Event Time:</label>
+            <input type="time" id="event-time" required>
+            <label for="event-category">Event Category:</label>
+            <select id="event-category" required>
+                <option value="">Select Category</option>
+                <option value="workshop">Workshop</option>
+                <option value="conference">Conference</option>
+                <option value="seminar">Seminar</option>
+                <option value="meetup">Meetup</option>
+            </select>
+            <label for="event-location">Event Location:</label>
+            <input type="text" id="event-location" placeholder="Event Location" required>
+            <label for="event-description">Event Description:</label>
+            <textarea id="event-description" placeholder="Event Description" required></textarea>
+            <button type="submit">Add Event</button>
+        </form>
+    </div>
+
+
+    <div class = "event-list" id = "event-list">
+        <h2>Upcoming Events</h2>
+        <button id="sort-date">Sort by Date</button>
+        <button id="filter-category">Filter by Category</button>
+        <button id="remove-past">Remove Past Events</button>
+        <button id="Remove-All-Events">Remove All Events</button>
+        <div id="all-events-container">
+            No Events Added Yet
+        </div>
+        <ul id="events-ul">
+        </ul>
+    </div>
+<script src="lab_assignment_1_web_dev.js"></script>
+</body>
+</html>

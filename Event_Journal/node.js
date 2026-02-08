@@ -1,4 +1,3 @@
-// ===== GET FORM AND INPUT ELEMENTS =====
 let form = document.getElementById('event-form');
 let eventInput = document.getElementById('event-name');
 let dateInput = document.getElementById('event-date');
@@ -10,14 +9,10 @@ let eventList = document.getElementById('events-ul');
 let allEventsContainer = document.getElementById('all-events-container');
 let removeAllBtn = document.getElementById('remove-all-events');
 
-// below is the really basic way to store events, we will learn about better ways to do this in future lessons
 let events = [];
 
-// ===== FUNCTION TO RENDER EVENTS =====
 function renderEvents() {
-    // clear the current list
     eventList.innerHTML = '';
-    // loop through events and create list items
     events.forEach((event, index) => {
         let li = document.createElement('li');
         li.classList.add('event-item');
@@ -34,10 +29,8 @@ function renderEvents() {
     });
 }
 
-// ===== EVENT LISTENER FOR FORM SUBMISSION =====
-form.addEventListener('submit', (e) => {
-    e.preventDefault(); // prevent form from submitting normally
-    // create event object from form inputs
+form.addEventListener('submit', (event) => {
+    event.preventDefault();
     let newEvent = {
         name: eventInput.value,
         date: dateInput.value,
@@ -46,26 +39,22 @@ form.addEventListener('submit', (e) => {
         description: descriptionInput.value,
         category: categoryInput.value
     };
-    // add new event to events array
     events.push(newEvent);
-    // re-render the event list
     renderEvents();
-    // reset the form
     form.reset();
 });
 
-// ===== EVENT LISTENER FOR REMOVING INDIVIDUAL EVENTS =====
-eventList.addEventListener('click', (e) => {
-    if (e.target.classList.contains('remove-btn')) {
-        let index = e.target.getAttribute('data-index');
-        events.splice(index, 1); // remove event from array
-        renderEvents(); // re-render the event list
+eventList.addEventListener('click', (event) => {
+    if (event.target.classList.contains('remove-btn')) {
+        let index = event.target.getAttribute('data-index');
+        events.splice(index, 1); 
+        renderEvents(); 
     }
 });
 
-// ===== EVENT LISTENER FOR REMOVING ALL EVENTS =====
 removeAllBtn.addEventListener('click', () => {
-    events = []; // clear the events array
-    renderEvents(); // re-render the event list
+    events = [];
+    renderEvents(); 
 });
+
 

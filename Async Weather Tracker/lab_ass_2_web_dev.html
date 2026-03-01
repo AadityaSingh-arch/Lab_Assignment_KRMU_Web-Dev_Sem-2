@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Async weather tracker</title>
+    <link rel="stylesheet" href="lab_ass_02.css">
+</head>
+<body>
+    <h1>🌦️ Async Weather Tracker</h1>
+    <div id="search-box">
+        <div id="left-panel">
+            <div class="card">
+                <h4>Search City</h4>
+                <form action="">
+                    <input type="text" id="city-name" placeholder="Enter city name">
+                    <button type="submit">Search</button>
+                </form>
+            </div>
+            <div class="card">
+                <h4>Search History</h4>
+                <div id="searched-cities">
+                    <ul id="searched-cities-list"></ul>
+                </div>
+            </div>
+        </div>
+        <div id="right-panel">
+            <div id="weather-info-box" class="card">
+                <!-- weather info or error message appears here -->
+            </div>
+        </div>
+    </div>
+    <script src="lab_ass_02.js"></script>
+</body>
+</html>

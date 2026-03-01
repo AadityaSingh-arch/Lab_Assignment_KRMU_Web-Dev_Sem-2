@@ -1,5 +1,3 @@
-// this is the JS part of my lab assignment 2 where i am making a weather tracker using async
-
 let API_Key = "84f60acf4132703a2cab1b69d9581e79"
 
 let url = "https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_Key}&units=metric"
@@ -22,7 +20,6 @@ async function getweatherinfo(cityName){
         let data = await response.json()
         let listItem = document.createElement("li")
 
-        // build table for weather info
         let html = `<table>
             <tr><td class="label">City</td><td>${data.name}, ${data.sys.country}</td></tr>
             <tr><td class="label">Temp</td><td>${data.main.temp.toFixed(1)} °C</td></tr>
@@ -33,7 +30,6 @@ async function getweatherinfo(cityName){
 
         weather.innerHTML = html
 
-        // Store cities in array
         let cities = JSON.parse(localStorage.getItem("Cities") || "[]")
         if(!cities.includes(cityName)) {
             cities.push(cityName)
@@ -49,7 +45,6 @@ async function getweatherinfo(cityName){
     }
 }
 
-// Load stored cities on page load
 let storedCities = JSON.parse(localStorage.getItem("Cities") || "[]")
 if(storedCities.length > 0){
     storedCities.forEach(cityName => {
@@ -66,4 +61,5 @@ form.addEventListener("submit", (e) => {
         getweatherinfo(city.value.trim())
         city.value = ""
     }
+
 })
